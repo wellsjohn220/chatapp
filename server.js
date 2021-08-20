@@ -34,8 +34,8 @@ app.post('/messages', (req, res) => {
         if(err)
             res.sendStatus(500)
         console.log(req.body)
-        //messages.push(req.body);
-        //io.emit('message', req.body)
+        messages.push(req.body);
+        io.emit('message', req.body)
         res.sendStatus(200);
       
     })    
