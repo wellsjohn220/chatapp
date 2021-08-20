@@ -1,0 +1,27 @@
+I:\Udemy\Fullstack12345\Chatapp>npm init -y
+
+I:\Udemy\Fullstack12345\Chatapp>npm i express --save
+
+300: function greeting(name) {alert('Hello ' + name);}
+function userInput(callback) {var name = prompt('Please enter your name')callback(name);}
+userInput(greeting);
+
+301:
+var animals = ['Elephant','Lion', 'Giraffe', 'Crocodile', 'Bear'];
+console.log(animals.map(animals => animals.length));
+
+302: https://getbootstrap.com/docs/5.0/getting-started/introduction/
+
+307: I:\Udemy\Fullstack12345\Chatapp>npm install --save body-parser
+
+<link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+310: I:\Udemy\Fullstack12345\Chatapp>npm install --save socket.io
+
+314: I:\Udemy\Fullstack12345\Chatapp>npm i --save mongoose
