@@ -3,7 +3,7 @@ var bodyParser = require('body-parser')
 
 const app = express()
 var http = require('http').Server(app)
-var io = require('socket.io')(http)
+//var io = require('socket.io')(http)
 var mongoose = require('mongoose')
 const { send } = require('process')
 
@@ -41,9 +41,9 @@ app.post('/messages', (req, res) => {
     })    
 })
 
-io.on('connection', (socket)=> {
-    console.log('user connected');
-})
+//io.on('connection', (socket)=> {
+//    console.log('user connected');
+//})
 
 mongoose.connect(dbUrl, (err) => {
     //if (err) return console.log(err);
