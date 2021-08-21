@@ -35,7 +35,7 @@
     <!-- <script src="/socket.io/socket.io.js"></script> -->
   </body>
   <script>
-    //var socket = io();
+    var socket = io();
 
     $(() => {
       console.log("Page loaded");
@@ -46,19 +46,19 @@
       });
       getMessages();
     });
-    //socket.on("message", addMessage);
+    socket.on("message", addMessage);
 
     function addMessage(message) {
       $("#messages").append(`${message.name}:&nbsp  ${message.message}<hr />`);
     }
     function getMessages() {
-      $.get("http://localhost:3010/messages", (data) => {
+      $.get("https://rocky-shelf-48597.herokuapp.com/messages", (data) => {
         console.log(data);
         data.forEach(addMessage);
       });
     }
     function postMessage(message) {
-      $.post("http://localhost:3010/messages", message);
+      $.post("https://rocky-shelf-48597.herokuapp.com/messages", message);
     }
   </script>
 </html>
