@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- <script src="/socket.io/socket.io.js" node></script> -->
+    <link rel="icon" href="FACE05.ICO" type="ICO" />
     <link rel="stylesheet" type="text/css" href="mystyle.css" />
     <title>Document</title>
   </head>
@@ -42,7 +43,7 @@
       console.log("Page loaded");
       $("#send").click(() => {
         // addMessages({ name: "John", message: "Hello World!" });
-        //var message = { name: $("#name").val(), message: $("#message").val() };
+        var message = { name: $("#name").val(), message: $("#message").val() };
         `<h5><span class="sendname">${message.name}</span>:&nbsp  ${message.message}</h5><hr />`;
         postMessage(message);
       });
@@ -55,12 +56,14 @@
     }
     function getMessages() {
       $.get("https://rocky-shelf-48597.herokuapp.com/messages", (data) => {
+        //$.get("http://localhost:3010/messages", (data) => {
         console.log(data);
         data.forEach(addMessage);
       });
     }
     function postMessage(message) {
       $.post("https://rocky-shelf-48597.herokuapp.com/messages", message);
+      //$.post("http://localhost:3010/messages", message);
     }
   </script>
 </html>
