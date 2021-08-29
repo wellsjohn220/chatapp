@@ -14,7 +14,7 @@
     <!-- <script src="/socket.io/socket.io.js" node></script> -->
     <link rel="icon" href="FACE05.ICO" type="ICO" />
     <link rel="stylesheet" type="text/css" href="mystyle.css" />
-    <title>Document</title>
+    <title>Prepare Demo</title>
   </head>
   <body>
     <div class="container">
@@ -45,16 +45,17 @@
     $(() => {
       console.log("Page loaded");
       $("#send").click(() => {
-        // addMessages({ name: "John", message: "Hello World!" });
         var message = { name: $("#name").val(), message: $("#message").val() };
-        //postMessage(message);
+        postMessage(message);
       });
       getMessages();
     });
     //socket.on("message", addMessage);
 
     function addMessage(message) {
-      `<h5><span class="sendname">${message.name}</span>:&nbsp  ${message.message}</h5><hr />`;
+      $("#messages").append(
+        `<h5><span class="sendname">${message.name}</span>:&nbsp  ${message.message}</h5><hr />`
+      );
     }
     function getMessages() {
       $.get("https://rocky-shelf-48597.herokuapp.com/messages", (data) => {
