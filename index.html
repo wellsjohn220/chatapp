@@ -30,21 +30,23 @@
           placeholder="Message"
         ></textarea>
         <br />
-        <button id="send" class="btn btn-success">Send</button>
+        <button
+          id="send"
+          class="btn btn-success"
+          onClick="document.location.reload(true)"
+        >
+          Send Message
+        </button>
       </div>
       <div id="messages"></div>
     </div>
-    <!-- <script src="/socket.io/socket.io.js"></script> -->
   </body>
   <script>
-    //var socket = io();
-
     $(() => {
       console.log("Page loaded");
       $("#send").click(() => {
         // addMessages({ name: "John", message: "Hello World!" });
         var message = { name: $("#name").val(), message: $("#message").val() };
-        `<h5><span class="sendname">${message.name}</span>:&nbsp  ${message.message}</h5><hr />`;
         //postMessage(message);
       });
       getMessages();
@@ -52,7 +54,7 @@
     //socket.on("message", addMessage);
 
     function addMessage(message) {
-      $("#messages").append(`${message.name}:&nbsp  ${message.message}<hr />`);
+      `<h5><span class="sendname">${message.name}</span>:&nbsp  ${message.message}</h5><hr />`;
     }
     function getMessages() {
       $.get("https://rocky-shelf-48597.herokuapp.com/messages", (data) => {
