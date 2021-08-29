@@ -25,3 +25,7 @@ console.log(animals.map(animals => animals.length));
 310: I:\Udemy\Fullstack12345\Chatapp>npm install --save socket.io
 
 314: I:\Udemy\Fullstack12345\Chatapp>npm i --save mongoose
+
+$ heroku git:clone -a rocky-shelf-48597
+
+https://rocky-shelf-48597.herokuapp.com/
